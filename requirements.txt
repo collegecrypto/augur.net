@@ -1,0 +1,4 @@
+Django==1.5
+dj-database-url==0.2.2
+django-ses==0.4.1
+gunicorn==18.0
