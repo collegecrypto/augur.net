@@ -6,7 +6,7 @@ class TextPlainView(TemplateView):
   def render_to_response(self, context, **kwargs):
     return super(TextPlainView, self).render_to_response(context, content_type='text/plain', **kwargs)
 
-    
+
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -26,5 +26,5 @@ urlpatterns = patterns('',
     # django static
   	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
   	url(r'^robots\.txt$', TextPlainView.as_view(template_name='robots.txt')),
-  	url(r'^favicon\.ico$', RedirectView.as_view(url='%simages/favicon.png' % settings.STATIC_URL)),
+  	url(r'^favicon\.ico$', RedirectView.as_view(url='%simages/favicon.ico' % settings.STATIC_URL)),
 )
