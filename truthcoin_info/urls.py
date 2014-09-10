@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^voting/$', 'truthcoin_info.views.voting', name='voting'),
     url(r'^faq/$', 'truthcoin_info.views.faq', name='faq'),
 
+    url(r'^vote$', 'truthcoin_info.views.vote', name='vote'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

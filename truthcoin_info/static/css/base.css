@@ -48,6 +48,19 @@ h1, h2, h3, h4, p {
 	font-size: 17px;
 	margin-top: 5px;
 }
+table.owners {
+	width: 250px;
+	margin: 20px auto 20px auto;
+}
+ul.ballot {
+	font-size: 14px;
+	font-weight: 400;
+	margin: 20px 0px 20px 0px;
+}
+pre.debug {
+	margin-top: 20px;
+	background-color: #FAFFE8;
+}
 footer {
 	font-size: 12px;
 	border-top: 1px solid #e7e7e7;

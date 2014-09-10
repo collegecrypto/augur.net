@@ -1,4 +1,4 @@
-import os
+import os, sys
 
 # Django settings for truthcoin_info project.
 
@@ -6,6 +6,9 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# add libs to PYTHONPATH
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "truthcoin_info", "libs"))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
