@@ -52,14 +52,16 @@ def vote(request):
             float(request.POST.get('d1', 0.5)),
             float(request.POST.get('d2', 0.5)),
             float(request.POST.get('d3', 0.5)),
-            float(request.POST.get('d4', 0.5))
+            float(request.POST.get('d4', 0.5)),
+            float(request.POST.get('d5', 0.5))
         ]
 
         votes = ma.masked_array([
-            ma.masked_array([1, 1, 1, 0.5]),   # jack
-            ma.masked_array([1, 1, 1, 0.5]),   # jill
-            ma.masked_array([1, 1, 1, 0.5]),   # hansel
-            ma.masked_array([1, 1, 1, 0.5]),   # gretel
+            ma.masked_array([0, 0, 0.5, 0, 0]),   # jack
+            ma.masked_array([0, 0, 0.5, 0, 0]),   # jill
+            ma.masked_array([0, 0, 0.5, 0, 0]),   # hansel
+            ma.masked_array([0, 0, 0.5, 0, 0]),   # gretel
+            ma.masked_array([0, 0, 0.5, 0, 0]),   # mary mary
             ma.masked_array(user_ballot),      # user
         ])
 

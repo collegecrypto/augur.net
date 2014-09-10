@@ -20,6 +20,7 @@
 			<tr><td>Jill</td><td>11</td></tr>
 			<tr><td>Hansel</td><td>0.5</td></tr>
 			<tr><td>Gretel</td><td>2.5</td></tr>
+			<tr><td>Mary Mary</td><td>0.5</td></tr>
 			<tr><td>You</td><td>3</td></tr>
 		</table>
 
@@ -43,18 +44,25 @@
 						<label class="radio-inline"><input type="radio" name="d2" value=0.5>Ambiguous or Indeterminent</label>
 					</div>
 				</li>
-				<li class="list-group-item clearfix">The Chicago Cubs win the 2013 World Series
+				<li class="list-group-item clearfix">Lee Harvey Oswald acted alone in the assasination of JFK
 					<div class="pull-right">
 						<label class="radio-inline"><input type="radio" name="d3" value=1>True</label>
 						<label class="radio-inline"><input type="radio" name="d3" value=0>False</label>
 						<label class="radio-inline"><input type="radio" name="d3" value=0.5>Ambiguous or Indeterminent</label>
 					</div>
 				</li>
-				<li class="list-group-item clearfix">Barack Obama will be impeached by the end of 2013
+				<li class="list-group-item clearfix">The Chicago Cubs win the 2013 World Series
 					<div class="pull-right">
 						<label class="radio-inline"><input type="radio" name="d4" value=1>True</label>
 						<label class="radio-inline"><input type="radio" name="d4" value=0>False</label>
 						<label class="radio-inline"><input type="radio" name="d4" value=0.5>Ambiguous or Indeterminent</label>
+					</div>
+				</li>
+				<li class="list-group-item clearfix">Barack Obama will be impeached by the end of 2013
+					<div class="pull-right">
+						<label class="radio-inline"><input type="radio" name="d5" value=1>True</label>
+						<label class="radio-inline"><input type="radio" name="d5" value=0>False</label>
+						<label class="radio-inline"><input type="radio" name="d5" value=0.5>Ambiguous or Indeterminent</label>
 					</div>
 				</li>
 			</ul>
@@ -78,7 +86,7 @@ $('form').submit(function(e) {
 	e.preventDefault();
 
 	var data = {}
-	var decisions = 4;
+	var decisions = 5;
 	$('input[type=radio]:checked').each(function(i, input) {
 		data[$(input).attr('name')] = $(input).val();
 		decisions -= 1;
