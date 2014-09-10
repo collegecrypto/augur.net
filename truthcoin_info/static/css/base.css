@@ -55,7 +55,22 @@ table.owners {
 ul.ballot {
 	font-size: 14px;
 	font-weight: 400;
-	margin: 20px 0px 20px 0px;
+	margin: 20px 0px 0px 0px;
+}
+ul.ballot .list-group-item:last-child {
+	border-bottom-right-radius: 0;
+}
+button#vote {
+	position: relative;
+	top: -1px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	background-color: rgb(217, 237, 247);
+}
+p.error {
+	padding: 3px 10px 0px 0px;
+	color: red;
+	font-weight: 400;
 }
 pre.debug {
 	margin-top: 20px;

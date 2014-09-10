@@ -28,6 +28,7 @@
 	
 		<form method='POST' class="clearfix">
 			<ul class="ballot list-group">
+				<li class="list-group-item list-group-item-info center">SAMPLE BALLOT</li>
 				<li class="list-group-item clearfix">Tom Cruise is 5 feet, 2 inches tall (plus or minus 1 inch)
 					<div class="pull-right">
 						<label class="radio-inline"><input type="radio" name="d1" value=1>True</label>
@@ -57,7 +58,8 @@
 					</div>
 				</li>
 			</ul>
-			<button type="sumbit" class="btn btn-default pull-right" id="vote">SUBMIT BALLOT</button>
+			<button type="sumbit" class="btn btn-default pull-right" id="vote">SUBMIT VOTES</button>
+			<p id="error" class="hidden pull-right"></p>
 		</form>
 
 		<pre class='debug well hidden'>
@@ -76,10 +78,19 @@ $('form').submit(function(e) {
 	e.preventDefault();
 
 	var data = {}
+	var decisions = 4;
 	$('input[type=radio]:checked').each(function(i, input) {
 		data[$(input).attr('name')] = $(input).val();
+		decisions -= 1;
 	})
-	console.log(data);
+
+	if (decisions != 0) {
+		var error = 'Please vote on ALL questions';
+		$('#error').text(error).removeClass('hidden');
+		return;
+	} else {
+		$('#error').text('').addClass('hidden');
+	}
 
 	$.ajax({
 		url: '/vote',
