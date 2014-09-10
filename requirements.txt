@@ -1,4 +1,14 @@
 Django==1.5
+boto==2.32.1
+certifi==14.05.14
 dj-database-url==0.2.2
 django-ses==0.4.1
 gunicorn==18.0
+numpy==1.8.2
+pandas==0.14.1
+python-dateutil==2.2
+pytz==2014.4
+requests==2.4.0
+six==1.7.3
+wquantiles==0.3
+wsgiref==0.1.2
