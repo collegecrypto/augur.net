@@ -1,0 +1,12 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+settings_local.py
+.idea/
+/docs/original-images
+/data.db
+/venv/
+*#
+*~
