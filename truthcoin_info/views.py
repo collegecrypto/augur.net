@@ -14,6 +14,7 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.utils.http import urlquote
 
 import numpy
+from decimal import *
 from numpy import ma
 from consensus import Factory
 
@@ -81,14 +82,14 @@ def vote(request):
         for i, reward in enumerate(results['Agents']['RowBonus'][0]):
 
             logging.info(reward)
-
-            owners[i]['reward'] = owners[i]['coin'] * reward
-            owners[i]['newCoin'] = owners[i]['reward'] + owners[i]['coin']
+            getcontext().prec = 4
+            owners[i]['reward'] = str(Decimal(str(owners[i]['coin'])) * Decimal(str(reward)))
+            owners[i]['newCoin'] = str(Decimal(str(owners[i]['reward'])) + Decimal(str(owners[i]['coin'])))
 
         response['owners'] = owners
 
         response = json.dumps(response, cls=NumpyEncoder)
-        
+
     else:
 
         response = '{}'
