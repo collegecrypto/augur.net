@@ -12,24 +12,25 @@
 		<p>The following demonstrates Votecoin's process of voting to aquire a decision's concensus and implementing the Reputation Based Vote Redistribution model.</p>
 
 		<br>
-		<p>Consider the following simplified scenario where, including yourself, there are a total of 5 owners of Votecoin. Each owner is listed below with the amount of Votecoin they have going into the voting period:</p>
+		<p>Consider the following simplified scenario where, including yourself, there are a total of 6 owners of Votecoin. Each owner is listed below with the amount of Votecoin they have going into the voting period:</p>
 
 		<table class="owners table table-striped">
-			<tr><th>Owner</th><th>Votecoin</th></tr>
-			<tr><td>Jack</td><td>8.5</td></tr>
-			<tr><td>Jill</td><td>11</td></tr>
-			<tr><td>Hansel</td><td>0.5</td></tr>
-			<tr><td>Gretel</td><td>2.5</td></tr>
-			<tr><td>Mary Mary</td><td>0.5</td></tr>
-			<tr><td>You</td><td>3</td></tr>
+			<thead>
+				<tr><th>Owner</th><th>Votecoin</th></tr>
+			</thead>
+			<tbody>
+				{% for o in owners %}
+				<tr><td>{{ o.name }}</td><td>{{ o.coin }}</td></tr>
+				{% endfor %}
+			</tbody>
 		</table>
 
 		<p>As various decisions in your market mature, they are periodically grouped into a ballot for voting.  The ballots are generated, distributed to Votecoin holders and the voting period begins.  All completed ballots are encrypted and the owners are blind to the decisions of the others.  The ballots are weighted by the number of Votecoin or reputation the owner has.<p>  
-		<p>Complete the example ballot below to calculate the results and the reputation-based redistribution of Votecoin that follows.</p>
+		<p>Complete the example ballot below to calculate the results and the reputation-based redistribution of Votecoin.</p>
 	
 		<form method='POST' class="clearfix">
 			<ul class="ballot list-group">
-				<li class="list-group-item list-group-item-info center">SAMPLE BALLOT</li>
+				<li class="list-group-item list-group-item-info center">EXAMPLE BALLOT</li>
 				<li class="list-group-item clearfix">Tom Cruise is 5 feet, 2 inches tall (plus or minus 1 inch)
 					<div class="pull-right">
 						<label class="radio-inline"><input type="radio" name="d1" value=1>True</label>
@@ -70,9 +71,29 @@
 			<p id="error" class="hidden pull-right"></p>
 		</form>
 
-		<pre class='debug well hidden'>
+		<div id="results" class="hidden">
 
-		</pre>
+			<h4>Voting Results</h4>
+			<p>With all the ballots in or the voting period expired, the votes and participation are tallied and each owner is rewarded or penalized Votecoin based on their voting.  The following algorithm is used to determine each owners new Votecoin reputation:</p>
+
+			<br><center>[ INSERT AWESOME MATH ]</center><br><br>
+
+			<p>So, in this exmaple, each owner would recieve the following Votecoin distribution following the end of the voting period.</p>
+			<table class="owners table table-striped">
+				<thead>
+					<tr><th>Owner</th><th>Consensus Reward</th><th>Votecoin</th></tr>
+				</thead>
+				<tbody>
+					{% for o in owners %}
+					<tr><td class='name'>{{ o.name }}</td><td class='reward'></td><td class='coin'></td></tr>
+					{% endfor %}
+				</tbody>
+			</table>
+
+			<pre class="debug well hidden">
+			</pre>
+
+		</div>
 
 	 </div>
 
@@ -81,6 +102,9 @@
 
 {% block bottomscript %}
 <script>
+
+var initialVotecoin = [{% for o in owners %}{{ o.coin }},{% endfor %}]
+
 $('form').submit(function(e) {
 
 	e.preventDefault();
@@ -105,10 +129,18 @@ $('form').submit(function(e) {
 		data: data,
 		method: 'POST',
 		success: function(response) {
-			//console.log(response);
-			var data = JSON.stringify(response, null, 2);  
-			$('pre.debug').text(data).removeClass('hidden');
+			
+			// populate results
+			$(response.owners).each(function(i, owner) {
+				$($('#results .owners tbody tr')[i].children[1]).text(owner.reward);
+				$($('#results .owners tbody tr')[i].children[2]).text(owner.newCoin);
+			});
 
+			$('#results').removeClass('hidden');
+
+  			// raw debug
+			var debug = JSON.stringify(response.raw, null, 2);
+			$('.debug').text(debug).removeClass('hidden');
 		},
 		error: function(response) {
 			console.log(response);

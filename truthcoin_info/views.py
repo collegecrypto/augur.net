@@ -17,6 +17,15 @@ import numpy
 from numpy import ma
 from consensus import Factory
 
+owners = [
+    {'name': 'Jack', 'coin': 8.5},
+    {'name': 'Jill', 'coin': 11},
+    {'name': 'Hansel', 'coin': 0.5},
+    {'name': 'Gretel', 'coin': 2.5},
+    {'name': 'Mary Mary', 'coin': 1},
+    {'name': 'You', 'coin': 3}
+]
+
 def home(request):
 
     return render(request, 'home.html')
@@ -24,7 +33,7 @@ def home(request):
 
 def voting(request):
 
-    return render(request, 'voting.html')
+    return render(request, 'voting.html', {'owners': owners})
 
 
 def faq(request):
@@ -65,12 +74,24 @@ def vote(request):
             ma.masked_array(user_ballot),      # user
         ])
 
-        logging.error(votes)
-        results = json.dumps(Factory(votes), cls=NumpyEncoder)
 
+        results = Factory(votes) 
+        response = {'raw': results}
+
+        for i, reward in enumerate(results['Agents']['RowBonus'][0]):
+
+            logging.info(reward)
+
+            owners[i]['reward'] = owners[i]['coin'] * reward
+            owners[i]['newCoin'] = owners[i]['reward'] + owners[i]['coin']
+
+        response['owners'] = owners
+
+        response = json.dumps(response, cls=NumpyEncoder)
+        
     else:
 
-        results = {}
+        response = '{}'
 
-    return HttpResponse(results, content_type='application/json')
+    return HttpResponse(response, content_type='application/json')
 
