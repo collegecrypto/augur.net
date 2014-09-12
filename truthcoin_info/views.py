@@ -42,6 +42,21 @@ def faq(request):
     return render(request, 'faq.html')
 
 
+def timeline(request):
+
+    return render(request, 'timeline.html', {'owners': owners})
+
+
+def monetization(request):
+
+    return render(request, 'monetization.html', {'owners': owners})
+
+
+def team(request):
+
+    return render(request, 'team.html', {'owners': owners})
+
+
 class NumpyEncoder(json.JSONEncoder):
 
     def default(self, obj):

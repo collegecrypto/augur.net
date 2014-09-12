@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     url(r'^$', 'truthcoin_info.views.home', name='home'),
     url(r'^voting/$', 'truthcoin_info.views.voting', name='voting'),
     url(r'^faq/$', 'truthcoin_info.views.faq', name='faq'),
+    url(r'^monetization/$', 'truthcoin_info.views.monetization', name='monetization'),
+    url(r'^timeline/$', 'truthcoin_info.views.timeline', name='timeline'),
+    url(r'^team/$', 'truthcoin_info.views.team', name='team'),
 
     url(r'^vote$', 'truthcoin_info.views.vote', name='vote'),
 
