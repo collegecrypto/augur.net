@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^monetization/$', 'truthcoin_info.views.monetization', name='monetization'),
     url(r'^timeline/$', 'truthcoin_info.views.timeline', name='timeline'),
     url(r'^team/$', 'truthcoin_info.views.team', name='team'),
+    url(r'^press/$', 'truthcoin_info.views.press', name='press'),
 
     url(r'^vote$', 'truthcoin_info.views.vote', name='vote'),
 

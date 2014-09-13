@@ -41,6 +41,9 @@ def faq(request):
 
     return render(request, 'faq.html')
 
+def press(request):
+
+    return render(request, 'press.html')
 
 def timeline(request):
 
