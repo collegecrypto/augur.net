@@ -7,6 +7,36 @@
 
 		<h2>Development Timeline</h2>
 
+		<p>Truthcoin is a challenging project, with many moving parts, and building it requires a wide variety of technical skills and knowledge.  Like many large engineering projects, we found that the path forward is most clearly seen by breaking the large project into several smaller, modular projects. In this case, we have arrived at 6 separate modules necessary to complete the project in its entirety. </p>
+
+		<h3>SideCoin<br>
+		<i>Estimated completion by October 1st, 2014</i></h3>
+		<p>Sidecoin is a “spinoff” coin - it is not interoperable with bitcoin, but functions similarly. The innovation lies in the initial distribution of the coin. While most new crypto currencies are “pre-mined”, or have less-than-fair initial distributions, Sidecoin uses blockchain “snapshot” technology to grant Sidecoins to any bitcoin holder. If you have 1 bitcoin, you would be eligible to trustlessly claim 1 Sidecoin. This distribution method is vital to the success of Truthcoin, as it allows existing bitcoin users to use the Truthcoin platform without a loss of value. By releasing Sidecoin separately and in advance of Truthcoin, we will be able to build credibility in the crypto currency community by highlighting this technological advance. </p>
+
+		<h3>Transactions<br>
+		<i>Estimated completion by October 1st, 2014</i></h3>
+		<p>There are a variety of specific new transactions required for the creation, betting in, and closing of prediction markets. These transaction types, while new, should not require any changes to bitcoin’s core code (allowing us to maintain security and integrity). As with "normal" transactions, the special transactions involved in prediction markets must be stored in the blockchain.  However, the markets require data which are not immediately incorporated into transactions.  Copies of this data are stored on the computers of all users participating in the market (the market's creator, the Cashcoin traders, and the voters). </p>
+
+		<h3>Time Lapse Cryptography<br>
+		<i>Estimated completion by October 7th, 2014</i></h3>
+		<p>To prevent voter collusion, it is critical that voters' ballots be encrypted before they are broadcast to the Truthcoin network.  The difficulty created by this is that it requires voters to both encrypt and decrypt their vote ballots. Truthcoin's voting periods will typically be long, to allow more voters the chance to participate.  The longer the voting period, the more likely voters are to neglect to decrypt their votes. Truthcoin's proper functioning relies on voter participation.  Our development of time lapse cryptography will ensure that a vote can be decrypted (on a timer), without requiring the voter to come back and do it manually.</p>
+
+		<h3>Vote Pooling<br>
+		<i>Estimated completion by October 15th, 2014</i></h3>
+		<p>Vote pooling is a simple name for a complicated process which makes it possible for a decentralized system to tally votes (and bets), and dispense rewards. While a mechanism like this is simple to design for a centralized system, the decentralized nature of Truthcoin makes it much more difficult. A full technical explanation can be found at: </p>
+
+		<h3>Coins<br>
+		<i>Estimated completion by November 1st, 2014</i></h3>
+		<p>Truthcoin contains three distinct currencies: “cashcoins”, “votecoins”, and “shares” (of a prediction market). Cashcoins function as a store of value, sendable from user to user, and are analogous to bitcoins - with the difference that they have an inherent usefulness: the ability to purchase “shares” in Truthcoin prediction markets.  </p>
+		<p>Votecoins differ conceptually from bitcoins. They are a sort of voter registration, which allow you to vote on the outcomes in prediction markets, after the event has occurred. Users may hold multiple votecoins, which entitles the holder to a ballot (weighted by the number of votecoins held). Gain/loss of Votecoins occurs automatically following market expiration, according to the Reputation Based Coin Redistribution, or RBCR, mechanism described in the whitepaper. Votecoins can also be sent between users, using a standard input/output Bitcoin transaction. </p>
+
+		<h3>Existing Code Integration<br>
+		<i>Estimated completion by November 15th, 2014</i></h3>
+		<p>Existing available open source code implements many of the mathematical details surrounding consensus and market logic from the original Truthcoin whitepaper.  These details might otherwise be quite time-consuming to accurately code from scratch. Since this is available to us, we will want to integrate this into our code base to whatever extent we can.</p>
+
+		<h3>Testing<br>
+		<i>Additional 2 months</i></h3>
+
 	 </div>
 
 </div>

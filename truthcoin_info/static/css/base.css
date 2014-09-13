@@ -81,6 +81,10 @@ p#error {
 	margin-top: 20px;
 	background-color: #FAFFE8;
 }
+h3 i {
+	font-size: 1.6rem;
+	color: #777;
+}
 footer {
 	font-size: 12px;
 	border-top: 1px solid #e7e7e7;
