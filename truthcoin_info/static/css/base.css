@@ -6,6 +6,9 @@ h1, h2, h3, h4, p {
 .container {
 	max-width: 850px;
 }
+iframe {
+	margin: 20px auto;
+}
 .page {
 	margin-top: 100px;
 }
