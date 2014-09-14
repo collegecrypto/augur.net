@@ -32,6 +32,9 @@ owners = [
     {'name': 'You', 'coin': 3}
 ]
 
+# Conserved quantity
+total_votecoins = Decimal(str(sum([owner['coin'] for owner in owners]))).quantize(digits)
+
 def home(request):
 
     return render(request, 'home.html')
@@ -98,23 +101,17 @@ def vote(request):
             ma.masked_array(user_ballot),      # user
         ])
 
-
         results = Factory(votes) 
         response = {'raw': results}
 
-        for i, reward in enumerate(results['Agents']['RowBonus'][0]):
+        updated_coin_distribution = results['Agents']['RowBonus'][0]
 
-            logging.info(reward)
+        for i, coin_proportion in enumerate(updated_coin_distribution):
 
-            decimal_coin = Decimal(str(owners[i]['coin'])).quantize(digits)
-            decimal_reward = Decimal(str(reward)).quantize(digits)
-
-            owners[i]['reward'] = str(decimal_coin * decimal_reward)
-            owners_reward = Decimal(str(owners[i]['reward'])).quantize(digits)
-            owners[i]['newCoin'] = str(owners_reward + decimal_coin)
+            owners[i]['newCoin'] = Decimal(str(coin_proportion)) * total_votecoins            
+            logging.info(owners[i]['newCoin'])
 
         response['owners'] = owners
-
         response = json.dumps(response, cls=NumpyEncoder)
 
     else:
