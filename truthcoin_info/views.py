@@ -111,8 +111,10 @@ def vote(request):
 
         for i, coin_proportion in enumerate(updated_coin_distribution):
 
-            owners[i]['newCoin'] = Decimal(str(coin_proportion)) * total_votecoins            
+            owners[i]['newCoin'] = Decimal(str(coin_proportion)) * total_votecoins
             logging.info(owners[i]['newCoin'])
+
+        new_coins = [owner['newCoin'] for owner in owners]
 
         response['owners'] = owners
         response = json.dumps(response, cls=NumpyEncoder)
