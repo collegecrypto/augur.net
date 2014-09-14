@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.utils.http import urlquote
 
 import numpy
-from decimal import Decimal, get_context, ROUND_HALF_EVEN
+from decimal import Decimal, getcontext, ROUND_HALF_EVEN
 from numpy import ma
 from consensus import Factory
 
@@ -108,7 +108,7 @@ def vote(request):
 
         for i, coin_proportion in enumerate(updated_coin_distribution):
 
-            owners[i]['newCoin'] = Decimal(str(coin_proportion)) * total_votecoins            
+            owners[i]['newCoin'] = str(Decimal(str(coin_proportion)) * total_votecoins)            
             logging.info(owners[i]['newCoin'])
 
         response['owners'] = owners
