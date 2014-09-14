@@ -33,7 +33,8 @@ owners = [
 ]
 
 # Conserved quantity
-total_votecoins = Decimal(str(sum([owner['coin'] for owner in owners]))).quantize(digits)
+coins = [owner['coin'] for owner in owners]
+total_votecoins = Decimal(str(sum(coins))).quantize(digits)
 
 def home(request):
 
@@ -101,7 +102,7 @@ def vote(request):
             ma.masked_array(user_ballot),      # user
         ])
 
-        results = Factory(votes) 
+        results = Factory(votes, Rep=coins)
         response = {'raw': results}
 
         updated_coin_distribution = results['Agents']['RowBonus'][0]
