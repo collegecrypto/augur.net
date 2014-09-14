@@ -14,9 +14,14 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.utils.http import urlquote
 
 import numpy
-from decimal import *
+from decimal import Decimal, get_context, ROUND_HALF_EVEN
 from numpy import ma
 from consensus import Factory
+
+getcontext().prec = 28
+getcontext().rounding = ROUND_HALF_EVEN
+
+digits = Decimal("1e-8")
 
 owners = [
     {'name': 'Jack', 'coin': 8.5},
@@ -100,9 +105,13 @@ def vote(request):
         for i, reward in enumerate(results['Agents']['RowBonus'][0]):
 
             logging.info(reward)
-            getcontext().prec = 4
-            owners[i]['reward'] = str(Decimal(str(owners[i]['coin'])) * Decimal(str(reward)))
-            owners[i]['newCoin'] = str(Decimal(str(owners[i]['reward'])) + Decimal(str(owners[i]['coin'])))
+
+            decimal_coin = Decimal(str(owners[i]['coin'])).quantize(digits)
+            decimal_reward = Decimal(str(reward)).quantize(digits)
+
+            owners[i]['reward'] = str(decimal_coin * decimal_reward)
+            owners_reward = Decimal(str(owners[i]['reward'])).quantize(digits)
+            owners[i]['newCoin'] = str(owners_reward + decimal_coin)
 
         response['owners'] = owners
 
