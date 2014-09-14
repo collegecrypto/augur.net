@@ -14,13 +14,11 @@ from django.views.decorators.csrf import csrf_exempt, csrf_protect
 from django.utils.http import urlquote
 
 import numpy
-<<<<<<< HEAD
+
 from decimal import Decimal, getcontext, ROUND_HALF_EVEN
-from numpy import ma
-=======
-from decimal import Decimal, get_context, ROUND_HALF_EVEN
 from numpy import ma, array
->>>>>>> 51df367af7a0a182c8992983ff55ece86087798c
+
+
 from consensus import Factory
 from custommath import GetWeight
 
@@ -40,7 +38,7 @@ owners = [
 
 # Conserved quantity
 coins = [owner['coin'] for owner in owners]
-total_votecoins = Decimal(str(sum(coins))).quantize(digits)
+total_votecoins = sum(coins)
 
 def home(request):
 
@@ -105,7 +103,7 @@ def vote(request):
             ma.masked_array([0, 0, 0.5, 0, 0]),   # hansel
             ma.masked_array([0, 0, 0.5, 0, 0]),   # gretel
             ma.masked_array([0, 0, 0.5, 0, 0]),   # mary mary
-            ma.masked_array(user_ballot),      # user
+            ma.masked_array(user_ballot),         # user
         ])
 
         OligarchyCoin = GetWeight(array([[coin] for coin in coins]))
@@ -116,8 +114,8 @@ def vote(request):
 
         for i, coin_proportion in enumerate(updated_coin_distribution):
 
-            owners[i]['newCoin'] = str(Decimal(str(coin_proportion)) * total_votecoins)            
-            logging.info(owners[i]['newCoin'])
+            owners[i]['reward'] = str(coin_proportion * total_votecoins)
+            owners[i]['newCoin'] = str((coin_proportion * total_votecoins) + float(owners[i]['coin']))         
 
         response['owners'] = owners
         response = json.dumps(response, cls=NumpyEncoder)

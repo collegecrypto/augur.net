@@ -74,14 +74,12 @@
 		<div id="results" class="hidden">
 
 			<h3>The Results</h3>
-			<p>With all the ballots in or the voting period expired, the votes and participation are tallied and each owner is rewarded or penalized Votecoin based on their voting.  The following algorithm is used to determine each owners new Votecoin reputation:</p>
+			<p>With all the ballots in or the voting period expired, the votes and participation are tallied and each owner is rewarded or penalized Votecoin based on their voting.  To determine the new Votecoin distribution, we're using a modified version of the statistical technique called Principal Component Analysis.</p>
 
-			<br><center>[ INSERT AWESOME MATH ]</center><br><br>
-
-			<p>Each owner would recieve the following Votecoin distribution following the end of the voting period.</p>
+			<p>Each owner would recieve the following Votecoin distribution at completion of the voting period.</p>
 			<table class="owners table table-striped">
 				<thead>
-					<tr><th>Owner</th><th>Consensus Reward</th><th>Votecoin</th></tr>
+					<tr><th>Owner</th><th>Consensus Reward</th><th>New Votecoin</th></tr>
 				</thead>
 				<tbody>
 					{% for o in owners %}
@@ -89,6 +87,8 @@
 					{% endfor %}
 				</tbody>
 			</table>
+
+			<p>For more information on this reputation based coin redistribution, see Paul Sztorc's white paper.<p>
 
 			<pre class="debug well hidden">
 			</pre>
@@ -132,8 +132,8 @@ $('form').submit(function(e) {
 			
 			// populate results
 			$(response.owners).each(function(i, owner) {
-				$($('#results .owners tbody tr')[i].children[1]).text(owner.reward);
-				$($('#results .owners tbody tr')[i].children[2]).text(owner.newCoin);
+				$($('#results .owners tbody tr')[i].children[1]).text(parseFloat(owner.reward).toFixed(4));
+				$($('#results .owners tbody tr')[i].children[2]).text(parseFloat(owner.newCoin).toFixed(4));
 			});
 
 			$('#results').removeClass('hidden');
