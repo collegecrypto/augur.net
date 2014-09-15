@@ -19,12 +19,7 @@ def WeightedMedian(data, weights, rage=False):
 
     """
     # First, sort both arrays using the weight array.
-    sorted_weights, sorted_data = [], []
-    for r, c in sorted(zip(weights, data)):
-        sorted_weights.append(r)
-        sorted_data.append(c)
-    sorted_weights = array(sorted_weights)
-    sorted_data = array(sorted_data)
+    sorted_weights, sorted_data = zip(*sorted(zip(weights, data)))
 
     # Selects the data closest to where the cumulative sum of the weights
     # is 0.5.  If there are multiple points found, then their simple median
