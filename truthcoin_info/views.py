@@ -114,8 +114,7 @@ def vote(request):
 
         for i, coin_proportion in enumerate(updated_coin_distribution):
 
-            owners[i]['reward'] = str(coin_proportion * total_votecoins)
-            owners[i]['newCoin'] = str((coin_proportion * total_votecoins) + float(owners[i]['coin']))         
+            owners[i]['newCoin'] = coin_proportion * total_votecoins
 
         response['owners'] = owners
         response = json.dumps(response, cls=NumpyEncoder)

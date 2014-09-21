@@ -79,7 +79,7 @@
 			<p>Each owner would recieve the following Votecoin distribution at completion of the voting period.</p>
 			<table class="owners table table-striped">
 				<thead>
-					<tr><th>Owner</th><th>Consensus Reward</th><th>New Votecoin</th></tr>
+					<tr><th>Owner</th><th>Old Votecoin</th><th>New Votecoin</th></tr>
 				</thead>
 				<tbody>
 					{% for o in owners %}
@@ -132,15 +132,15 @@ $('form').submit(function(e) {
 			
 			// populate results
 			$(response.owners).each(function(i, owner) {
-				$($('#results .owners tbody tr')[i].children[1]).text(parseFloat(owner.reward).toFixed(4));
+				$($('#results .owners tbody tr')[i].children[1]).text(parseFloat(owner.coin).toFixed(4));
 				$($('#results .owners tbody tr')[i].children[2]).text(parseFloat(owner.newCoin).toFixed(4));
 			});
 
 			$('#results').removeClass('hidden');
 
   			// raw debug
-			var debug = JSON.stringify(response.raw, null, 2);
-			$('.debug').text(debug).removeClass('hidden');
+			// var debug = JSON.stringify(response.raw, null, 2);
+			// $('.debug').text(debug).removeClass('hidden');
 		},
 		error: function(response) {
 			console.log(response);
