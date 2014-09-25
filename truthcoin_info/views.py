@@ -18,9 +18,7 @@ import numpy
 from decimal import Decimal, getcontext, ROUND_HALF_EVEN
 from numpy import ma, array
 
-
-from consensus import Factory
-from custommath import GetWeight
+from pyconsensus import Oracle
 
 getcontext().prec = 28
 getcontext().rounding = ROUND_HALF_EVEN
@@ -106,8 +104,9 @@ def vote(request):
             ma.masked_array(user_ballot),         # user
         ])
 
-        OligarchyCoin = GetWeight(array([[coin] for coin in coins]))
-        results = Factory(votes, Rep=OligarchyCoin)
+        weights = array([[coin] for coin in coins])
+        oracle = Oracle(votes=votes, weights=weights)
+        results = oracle.consensus()
         response = {'raw': results}
 
         updated_coin_distribution = results['Agents']['RowBonus'][0]
