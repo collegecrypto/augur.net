@@ -20,7 +20,7 @@ def press(request):
     return render(request, 'press.html')
 
 def timeline(request):
-    return render(request, 'timeline.html', {'owners': owners})
+    return render(request, 'timeline.html')
 
 def team(request):
-    return render(request, 'team.html', {'owners': owners})
+    return render(request, 'team.html')
