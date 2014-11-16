@@ -16,7 +16,6 @@ urlpatterns = patterns('',
     url(r'^timeline/$', 'augur_net.views.timeline', name='timeline'),
     url(r'^team/$', 'augur_net.views.team', name='team'),
     url(r'^press/$', 'augur_net.views.press', name='press'),
-    url(r'^paper/$', 'augur_net.views.paper', name='paper'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -25,6 +24,7 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     # django static
+    url(r'^paper/$', RedirectView.as_view(url='%saugur.pdf' % settings.STATIC_URL)),
   	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
   	url(r'^robots\.txt$', TextPlainView.as_view(template_name='robots.txt')),
   	url(r'^favicon\.ico$', RedirectView.as_view(url='%simages/favicon.ico' % settings.STATIC_URL)),
