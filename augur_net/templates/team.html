@@ -1,59 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Augur Project</title>
-  <meta charset="utf-8">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300,400,700">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
-</head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/"><img src="images/augur-logo.png" />Augur</a>
-      </div>
-      <div class="collapse navbar-collapse navbar-ex1-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav pull-right">
-          <li><a href="augur.pdf">White Paper</a></li>
-          <li><a href="team.html">The Team</a></li>
-          <li><a href="press.html">Press</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="page container">
-    <div class="row">
-       <div class="col-xs-12">
-        <h2>The Team</h2>
-        <ul class="team">
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/jack_peterson.jpg"><div><p>Jack Peterson</p>Project Lead</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/joey_krug.jpg"><div><p>Joey Krug</p>Hacker</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/scott_leonard.jpg"><div><p>Scott Leonard</p>Web Developer</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/alan_lu.jpg"><div><p>Alan Lu</p>Developer</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/jeremy_gardner.jpg"><div><p>Jeremy Gardner</p>Marketing</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/connor_higgins.jpg"><div><p>Connor Higgins</p>Marketing</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/zack_hess.jpg"><div><p>Zack Hess</p>Developer</div></li>
-          <li class="col-xs-12 col-sm-6"><img src="/static/images/chris_caldron.jpg"><div><p>Chris Calderon</p>Developer</div></li>
-        </ul>
-       </div>
-    </div>
-  <footer>
-    <div class="container">
-      <p>&copy; 2014 Forecast Foundation&nbsp;&nbsp;&nbsp; <a href="info@augur.net">Contact Us</a></p>
-    </div>
-  </footer>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+   <div class="col-xs-12">
+    <h2>The Team</h2>
+    <ul class="team">
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/jack_peterson.jpg"><div><p>Jack Peterson</p>Project Lead</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/joey_krug.jpg"><div><p>Joey Krug</p>Hacker</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/scott_leonard.jpg"><div><p>Scott Leonard</p>Web Developer</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/alan_lu.jpg"><div><p>Alan Lu</p>Developer</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/jeremy_gardner.jpg"><div><p>Jeremy Gardner</p>Marketing</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/connor_higgins.jpg"><div><p>Connor Higgins</p>Marketing</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/zack_hess.jpg"><div><p>Zack Hess</p>Developer</div></li>
+      <li class="col-xs-12 col-sm-6"><img src="/static/images/chris_caldron.jpg"><div><p>Chris Calderon</p>Developer</div></li>
+    </ul>
+   </div>
+</div>
+{% endblock %}

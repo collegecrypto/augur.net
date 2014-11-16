@@ -16,8 +16,8 @@ from django.utils.http import urlquote
 def home(request):
     return render(request, 'home.html')
 
-def press(request):
-    return render(request, 'press.html')
+def faq(request):
+    return render(request, 'faq.html')
 
 def timeline(request):
     return render(request, 'timeline.html')
