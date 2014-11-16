@@ -24,7 +24,6 @@ urlpatterns = patterns('',
     # url(r'^admin/', include(admin.site.urls)),
 
     # django static
-    url(r'^paper/$', RedirectView.as_view(url='%saugur.pdf' % settings.STATIC_URL)),
   	url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
   	url(r'^robots\.txt$', TextPlainView.as_view(template_name='robots.txt')),
   	url(r'^favicon\.ico$', RedirectView.as_view(url='%simages/favicon.ico' % settings.STATIC_URL)),
