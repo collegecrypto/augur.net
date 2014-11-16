@@ -1,6 +1,6 @@
 import os, sys
 
-# Django settings for truthcoin_info project.
+# Django settings for augur_net project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -8,7 +8,7 @@ TEMPLATE_DEBUG = DEBUG
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # add libs to PYTHONPATH
-sys.path.insert(0, os.path.join(PROJECT_ROOT, "truthcoin_info", "libs"))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "augur_net", "libs"))
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -68,7 +68,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'truthcoin_info', 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'augur_net', 'staticfiles')
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -109,10 +109,10 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'truthcoin_info.urls'
+ROOT_URLCONF = 'augur_net.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'truthcoin_info.wsgi.application'
+WSGI_APPLICATION = 'augur_net.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
@@ -127,7 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'truthcoin_info',
+    'augur_net',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

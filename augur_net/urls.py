@@ -11,17 +11,16 @@ class TextPlainView(TemplateView):
 # from django.contrib import admin
 # admin.autodiscover()
 
-
 urlpatterns = patterns('',
-    url(r'^$', 'truthcoin_info.views.home', name='home'),
-    url(r'^voting/$', 'truthcoin_info.views.voting', name='voting'),
-    url(r'^faq/$', 'truthcoin_info.views.faq', name='faq'),
-    url(r'^monetization/$', 'truthcoin_info.views.monetization', name='monetization'),
-    url(r'^timeline/$', 'truthcoin_info.views.timeline', name='timeline'),
-    url(r'^team/$', 'truthcoin_info.views.team', name='team'),
-    url(r'^press/$', 'truthcoin_info.views.press', name='press'),
+    url(r'^$', 'augur_net.views.home', name='home'),
+    url(r'^voting/$', 'augur_net.views.voting', name='voting'),
+    url(r'^faq/$', 'augur_net.views.faq', name='faq'),
+    url(r'^monetization/$', 'augur_net.views.monetization', name='monetization'),
+    url(r'^timeline/$', 'augur_net.views.timeline', name='timeline'),
+    url(r'^team/$', 'augur_net.views.team', name='team'),
+    url(r'^press/$', 'augur_net.views.press', name='press'),
 
-    url(r'^vote$', 'truthcoin_info.views.vote', name='vote'),
+    url(r'^vote$', 'augur_net.views.vote', name='vote'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

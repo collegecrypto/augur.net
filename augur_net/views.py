@@ -16,20 +16,11 @@ from django.utils.http import urlquote
 def home(request):
     return render(request, 'home.html')
 
-def voting(request):
-    return render(request, 'voting.html', {'owners': owners})
-
-def faq(request):
-    return render(request, 'faq.html')
-
 def press(request):
     return render(request, 'press.html')
 
 def timeline(request):
     return render(request, 'timeline.html', {'owners': owners})
-
-def monetization(request):
-    return render(request, 'monetization.html', {'owners': owners})
 
 def team(request):
     return render(request, 'team.html', {'owners': owners})
