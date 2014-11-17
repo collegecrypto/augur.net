@@ -27,3 +27,6 @@ def team(request):
 
 def prototype(request):
     return render(request, 'prototype.html')
+
+def code(request):
+    return render(request, 'code.html')
