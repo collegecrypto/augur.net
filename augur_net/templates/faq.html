@@ -2,33 +2,32 @@
 {% block content %}
 <div class="row">
    <div class="col-xs-12">
-      <p>What is Augur?</p>
+      <h3>What is Augur?</h3>
 
       <p>Augur is a decentralized open source platform for prediction markets, built on Bitcoin Core. It will fundamentally change the cost of information, its availability, and the ways in which people wager on future events.</p>
 
-      <p> Why a prediction market?</p>
+      <h3>Why a prediction market?</h3>
 
-      <p>Since the beginning of civilization, human beings have been trying to predict tomorrow. The man that knows what tomorrow holds, can be king today. In a prediction market, this knowledge of the future is commoditized, and ultimately, monetized. A prediction market is more than a market for knowledge of the future - it&rsquo;s a market for accurate information in the present. The better the forecast, the greater the profit. This makes prediction markets the ideal model for information validation and dissemination. </p>
+      <p>Since the beginning of civilization, human beings have been trying to predict tomorrow. The man that knows what tomorrow holds, can be king today. In a prediction market, this knowledge of the future is commoditized, and ultimately, monetized. A prediction market is more than a market for knowledge of the future -- it's a market for accurate information in the present. The better the forecast, the greater the profit. This makes prediction markets the ideal model for information validation and dissemination. </p>
 
-      <p> Why a decentralized prediction market?</p>
+      <h3>Why a decentralized prediction market?</h3>
 
-      <p>Prediction markets exist - there are any number of Bitcoin denominated prediction markets on the internet. Prediction markets have existed, and even achieved a modicum of mainstream success. InTrade in particular was famous for its accuracy in political elections. Yet InTrade, and the current Bitcoin denominated iterations all suffer from the same potentially lethal flaw: Centralization.</p>
+      <p>Historically, the actions required of a prediction market -- accepting wagers, deciding on the outcome of an event, then paying the wagers back out according to the results -- have been  centralized. The simplest approach to aggregating wagers is to have a trustworthy entity maintain a ledger. The simplest way to determine the outcome of an event is to get the answer from a wise, impartial judge, whom all participants in the market trust.</p>
 
-      <p>InTrade had a single point of failure, and it failed. The US government made sure of it. Any controversial marketplace with a single point of failure will fail eventually (see: Silk Road). The only way to safeguard against this is to design an unstoppable marketplace which houses unstoppable markets. Augur will be an unstoppable marketplace for knowledge of the future. By building the first truly decentralized market for predictions, we can ensure that no entity will be able to tamper with the free flow of knowledge and its rewards, no matter how great their motivation.</p>
+      <p>Upon closer inspection, these straightforward answers fray at the edges: who is this `someone' who is trustworthy enough to maintain a ledger for everyone else? Who is the judge that every participant trusts? And, even if such paragons were found and agreed upon, how could participants be certain they will <em>remain</em> trustworthy once they are granted more power? "Opportunity makes the thief", after all. And, of course, "Power corrupts. Absolute power corrupts absolutely."</p>
 
-      <p> Why build Augur on Bitcoin Core?</p>
+      <p>In practice, a larger issue is that these trusted entities represent single points of failure. Prediction markets are often disliked by powerful interests. As the experience of centralized prediction markets -- such as InTrade and TradeSports -- over the past decade has shown, if governments or special interest groups want to shut down a website, they will find a way: InTrade, after all, was an Irish company, shut down as a result of the U.S. Commodity Futures Trading Commission’s actions.  Even the Defense Advanced Research Project Agency and Central Intelligence Agency were forced to end their foray into prediction markets as a result of Congressional interference.</p>
+
+      <p>Contrast this with the history of Bitcoin.  Bitcoin is a cryptographic currency and payment platform that has found an enemy in powerful nation-states and financial institutions.  Nevertheless, Bitcoin has thrived: as of November 2014, it has a market capitalization of over five billion U.S. dollars, and it is the anchor of a thriving ecosystem of startups, trade, and technological innovation. This is possible because Bitcoin is decentralized: once it was released, it could not be shut down. Even its pseudonymous creator, Satoshi Nakamoto, cannot stop the cryptocurrency. This is by design: he (or she or they) purposely did not make himself Bitcoin's single point of failure.</p>
+
+      <h3>Why build Augur on Bitcoin Core?</h3>
 
       <p>Bitcoin is a battle tested technology. When a technology represents billions of dollars of assets it becomes a target. Since Bitcoin first achieved mainstream success, it has been a target for many people who would love to break the system. Despite this bullseye on its back, minor issues early on notwithstanding, Bitcoin Core code has stood the test of time. By basing Augur on this tested foundation, we can say with confidence that the platform will be both secure and robust.</p>
 
-      <p> Is this really possible? Will it even work?</p>
+      <h3>This sounds familiar - where have I heard of this idea before?</h3>
 
-      <p>Yes, and yes. We have assembled a diverse group of individuals uniquely qualified to take on a task of this magnitude. Everybody working on this project has an intimate familiarity with Bitcoin Core, and the potential difficulties involved in building a platform this revolutionary. We have foremost experts in all relevant fields (crypto-currency, prediction markets, game theory) directly advising the project. </p>
+      <p>The Augur project is based on the brilliant work of <a href="http://www.truthcoin.info">Paul Sztorc</a>. The original <a href="https://github.com/psztorc/Truthcoin">Truthcoin white paper</a> and its accompanying writings laid the theoretical groundwork for this project. While Augur is built on the foundation that Paul constructed with Truthcoin, there are technical differences and ongoing changes being made in the actual implementation. We are proud to call Paul a friend and look forward to continuing to work with him to refine the prototype, as we move closer to a finished product.</p>
 
-      <p>Our closed alpha prototype is being readied for imminent release, and many team members have already made major contributions to the crypto-currency space (basiccoin, Slasher, Sidecoin, Jack add your releases here and other shit I&rsquo;m missing, same for Joey). If you would like to contribute to this project, please do not hesitate to contact a member of the team for more information.</p>
-
-      <p>This sounds familiar - where have I heard of this idea before?</p>
-
-      <p>The Augur project is based on the brilliant work of Paul Storzc at http://www.truthcoin.org. The Truthcoin white paper, and accompanying writings laid the groundwork for this project. While Augur is built on the foundation that Paul constructed with Truthcoin, there are technical differences and ongoing changes being made in the actual implementation. We are proud to call Paul a friend and look forward to continuing to work with him to refine the prototype, as we move closer to a finished product. </p>
    </div>
 </div>
 {% endblock %}
