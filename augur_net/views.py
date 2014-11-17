@@ -24,3 +24,6 @@ def timeline(request):
 
 def team(request):
     return render(request, 'team.html')
+
+def prototype(request):
+    return render(request, 'prototype.html')

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Prototype</h2>
+    
+    <h3 id="installation">Installation</h3>
+    <p>To install the prototype, you must have the following software installed:</p>
+    <ul>
+      <li>Python 2.7</li>
+      <li><a href="https://github.com/zack-bitcoin/Truthcoin-POW">Truthcoin-POW</a></li>
+      <li>Flask</li>
+      <li>Flask-SocketIO</li>
+    </ul>
+    
+    <h3 id="nix">*nix (Linux/Unix/BSD/OSX)</h4>
+    <p>First, checkout Augur-UI next to Truthcoin-POW (or change config path in <code>app.py</code>).  Then enter the following commands:</p>
+    <pre><code>
+  $ cd Augur-UI
+  $ pip install -r requirements.txt
+  $ python app.py
+    </code></pre>
+
+    <p>Navigate to <code>http://localhost:9000</code> in your browser, and you should see the Augur interface:</p>
+
+    <img src="{{ STATIC_URL }}images/screenshot_node_stopped.png" style="max-width:100%; border:1px solid #ccc;" />
+
+    <p>To fire up your local node, click the red "Node stopped" button, then "Start node".</p>
+    
+    <h3 id="windows">Windows</h4>
+    <p>Unfortunately, Windows installation requires a few more steps than the various *nix platforms.<br />
+    </p>
+    <ol>
+      <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed. Also, make sure that you have downloaded the <a href="https://github.com/zack-bitcoin/Truthcoin-POW">prototype core</a>.  Both programs will need to be extracted to the same directory if you download the zip files.</li>
+
+      <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newe$</li>
+      
+      <li>Once those are installed, you need to download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> (right click on the link and click "Save Target As" and save with the name ez_setup.py.) You sh$</li>
+      
+      <li>Now you need to edit the <code>Path</code> environment variable. To do this, go to the <code>Start menu</code>, right click on <code>Computer</code>, click on <code>Advanced System Settings</code> in the upper left, click <code>Environment Variables</code> in the bottom right$</li>
+      
+      <li>Now go to http://aka.ms/vcpython27 to download and install the windows C compiler for use with pip.</li>
+      
+      <li>Finally, go back to the <code>Start Menu</code> type <code>cmd</code> and press <code>Enter</code>, then type <code>pip install flask flask-socketio</code>.</li>
+    </ol>
+    <p>You can run the UI by double clicking on <code>app.py</code>.</p>
+
+    <p>Caution: the Augur prototype is built for rapid testing.  Our team makes no guarantees about its security or scalability!  Use at your own risk :)</p>
+
+    <ul class="screenshots">
+      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_2.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_3.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_create_branch.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_add_decision.png" style="max-width:100%" /></li>
+    </ul>
+
+  </div>
+</div>
+{% endblock %}

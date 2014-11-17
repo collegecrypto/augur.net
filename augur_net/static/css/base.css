@@ -7,7 +7,7 @@ h1, h2, h3, h4, p {
 	color: gray;
 }
 .container {
-	/*max-width: 850px;*/
+	max-width: 850px;
 }
 iframe {
 	margin: 20px auto;
@@ -34,6 +34,10 @@ iframe {
 .page ul li {
 
 }
+#site-title {
+	font-size: 25px;
+	font-family: Michroma;
+}
 .navbar {
 	min-height: 60px;
 }
@@ -57,6 +61,16 @@ iframe {
 .owners {
 	width: 250px;
 	margin: 20px auto 20px auto;
+}
+.nostylelist {
+	list-style: none !important;
+	margin-left: 0px;
+	padding: 0px;
+}
+.screenshots {
+	list-style: none;
+	margin-left: 0px;
+	padding: 0px;
 }
 .team {
 	list-style: none;
