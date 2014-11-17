@@ -7,7 +7,7 @@ h1, h2, h3, h4, p {
 	color: gray;
 }
 .container {
-	max-width: 850px;
+	/*max-width: 850px;*/
 }
 iframe {
 	margin: 20px auto;
