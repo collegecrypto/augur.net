@@ -9,11 +9,22 @@
     <ul>
       <li>Python 2.7</li>
       <li><a href="https://github.com/zack-bitcoin/Truthcoin-POW">Truthcoin-POW</a></li>
-      <li>Flask</li>
-      <li>Flask-SocketIO</li>
+      <li>git</li>
+      <li>pip</li>
     </ul>
     
-    <h3 id="nix">*nix (Linux/Unix/BSD/OSX)</h4>
+    <h3 id="osx">OSX</h3>
+    <p>Install Xcode command line tools:</p>
+    <pre><code>
+  $ git clone git@github.com:scottzer0/Augur-UI.git
+  $ cd Augur-UI
+  $ sudo pip install -r requirements.txt
+  $ python app.py
+    </code></pre>
+
+    <hr />
+
+    <h3 id="nix">Linux</h3>
     <p>First, checkout Augur-UI next to Truthcoin-POW (or change config path in <code>app.py</code>).  Then enter the following commands:</p>
     <pre><code>
   $ cd Augur-UI
@@ -21,7 +32,9 @@
   $ python app.py
     </code></pre>
 
-    <p>Navigate to <code>http://localhost:9000</code> in your browser, and you should see the Augur interface:</p>
+    <hr />
+
+    <p>Once Augur is installed, navigate to <code>http://localhost:9000</code> in your browser, and you should see the Augur interface:</p>
 
     <img src="{{ STATIC_URL }}images/screenshot_node_stopped.png" style="max-width:100%; border:1px solid #ccc;" />
 
@@ -47,13 +60,26 @@
 
     <p>Caution: the Augur prototype is built for rapid testing.  Our team makes no guarantees about its security or scalability!  Use at your own risk :)</p>
 
+    <hr />
+
     <ul class="screenshots">
-      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%" /></li>
-      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_2.png" style="max-width:100%" /></li>
-      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_3.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_2.png" style="max-width:100%" /></li>
+      <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_3.png" style="max-width:100%" /></li>
+    </ul>
+
+    <div style="clear:both"></div>
+
+    <hr />
+
+    <ul class="screenshots">
       <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_create_branch.png" style="max-width:100%" /></li>
       <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_add_decision.png" style="max-width:100%" /></li>
     </ul>
+
+    <div style="clear:both"></div>
+
+    <hr />
 
   </div>
 </div>
