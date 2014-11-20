@@ -1,22 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
+<div class="row" id="prototype">
   <div class="col-xs-12">
-    <h2>Prototype</h2>
-    
-    <h3 id="installation">Installation</h3>
+
+    <h2>Augur Prototype - Installation and Use</h2>
+
+    <p>The Augur prototype is currently in alpha testing.  Our installation procedures (and other documentation) will get better/easier as time goes on and we smooth out the rough edges!  In the meantime, please <a href="mailto:team@augur.net">email</a> us if you have trouble installing or running the prototype.</p>
+
+    <p>Caution: the Augur prototype is built for rapid testing.  We do not guarantee anything about its security or scalability!  Use at your own risk :)</p>
+
+    <p>
+      <img src="{{ STATIC_URL }}images/screenshot_node_running.png" style="max-width:100%; border:1px solid #ccc;" />
+    </p>
+
+    <hr />
+
+    <h2 id="installation">Installation</h2>
     <p>To install the prototype, you must have the following software installed:</p>
-    <ul>
-      <li>Python 2.7</li>
-      <li><a href="https://github.com/zack-bitcoin/Truthcoin-POW">Truthcoin-POW</a></li>
-      <li>git</li>
-      <li>pip</li>
-    </ul>
+    <ol>
+      <li><a href="https://www.python.org/downloads/">Python 2.7.x</a></li>
+      <li>pip (for Windows users, <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">Christophe Gohlke's installer</a> is the recommended way to install pip)</li>
+      <li>git (for Windows users, here is <a href="http://git-scm.com/download/win">one option</a>)</li>
+    </ol>
     
     <h3 id="osx">OSX</h3>
-    <p>Install Xcode command line tools:</p>
+    <p>First, install Xcode command line tools.  </p>
     <pre><code>
-  $ git clone git@github.com:scottzer0/Augur-UI.git
+  $ git clone https://github.com/scottzer0/Augur-UI.git
   $ cd Augur-UI
   $ sudo pip install -r requirements.txt
   $ python app.py
@@ -31,49 +41,52 @@
     </code></pre>
   
     <h3 id="windows">Windows</h4>
-    <p>Unfortunately, Windows installation requires a few more steps than the various *nix platforms.<br />
+    <p>Unfortunately, Windows installation requires a few more steps:<br />
     </p>
     <ol>
       <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed. Also, make sure that you have downloaded the <a href="https://github.com/zack-bitcoin/Truthcoin-POW">prototype core</a>.  Both programs will need to be extracted to the same directory if you download the zip files.</li>
 
-      <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newe$</li>
+      <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newest one that matches your python installation's architecture!)</li>
       
-      <li>Once those are installed, you need to download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> (right click on the link and click "Save Target As" and save with the name ez_setup.py.) You sh$</li>
+      <li>Once those are installed, you need to download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> (right click on the link and click "Save Target As" and save with the name ez_setup.py.) You should be able to double click this file if you have installed python, and it will run and close on it's own.</li>
       
-      <li>Now you need to edit the <code>Path</code> environment variable. To do this, go to the <code>Start menu</code>, right click on <code>Computer</code>, click on <code>Advanced System Settings</code> in the upper left, click <code>Environment Variables</code> in the bottom right$</li>
+      <li>Now you need to edit the <code>Path</code> environment variable. To do this, go to the <code>Start menu</code>, right click on <code>Computer</code>, click on <code>Advanced System Settings</code> in the upper left, click <code>Environment Variables</code> in the bottom right, then in the System Variables section, scroll down till you see Path. Click on Path, and click Edit.... Press the <code>Home</code> key to get to the start of the line, then add <code>C:\Python27\Scripts;C:\Python27\;</code> to the start of the line and click <code>OK</code>.</li>
       
       <li>Now go to http://aka.ms/vcpython27 to download and install the windows C compiler for use with pip.</li>
       
       <li>Finally, go back to the <code>Start Menu</code> type <code>cmd</code> and press <code>Enter</code>, then type <code>pip install flask flask-socketio</code>.</li>
     </ol>
-    <p>You can run the UI by double clicking on <code>app.py</code>.</p>
 
-    <p>Caution: the Augur prototype is built for rapid testing.  Our team makes no guarantees about its security or scalability!  Use at your own risk :)</p>
+    <p>Now, run the UI by double clicking on <code>app.py</code>.</p>
 
     <hr />
+
+    <h2 id="usage">Usage</h2>
 
     <p>Once Augur is installed, navigate to <code>http://localhost:9000</code> in your browser, and you should see the Augur interface:</p>
 
-    <img src="{{ STATIC_URL }}images/screenshot_node_stopped.png" style="max-width:100%; border:1px solid #ccc;" />
+    <p>
+      <img src="{{ STATIC_URL }}images/screenshot_node_stopped.png" style="max-width:100%; border:1px solid #ccc;" />
+    </p>
 
-    <p>To fire up your local node, click the red "Node stopped" button, then "Start node".</p>
+    <p>To fire up your local node, click the red "Node stopped" button, then "Start node".  After your node starts, you will see the main Augur interface:</p>
 
-    <hr />
+    <p>
+      <img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%; border:1px solid #ccc; padding: 5px;" />
+    </p>
 
-    <ul class="screenshots">
-      <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%" /></li>
+    <h3>Adding a Decision</h3>
+
+    <p><img src="{{ STATIC_URL }}images/screenshot_add_decision.png" style="max-width:500px; border:1px solid #ccc; padding: 5px;" /></p>
+
+    <h3>Creating a Branch</h3>
+
+    <p><img src="{{ STATIC_URL }}images/screenshot_create_branch.png" style="max-width:500px; border:1px solid #ccc; padding: 5px;" /></p>
+
+    <!-- <ul class="screenshots">
       <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_2.png" style="max-width:100%" /></li>
       <li class="col-xs-12 col-sm-4"><img src="{{ STATIC_URL }}images/screenshot_11-17-14_3.png" style="max-width:100%" /></li>
-    </ul>
-
-    <div style="clear:both"></div>
-
-    <hr />
-
-    <ul class="screenshots">
-      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_create_branch.png" style="max-width:100%" /></li>
-      <li class="col-xs-12 col-sm-6"><img src="{{ STATIC_URL }}images/screenshot_add_decision.png" style="max-width:100%" /></li>
-    </ul>
+    </ul> -->
 
     <div style="clear:both"></div>
 
