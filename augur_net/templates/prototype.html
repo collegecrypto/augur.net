@@ -22,24 +22,33 @@
       <li>pip (for Windows users, <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">Christophe Gohlke's installer</a> is the recommended way to install pip)</li>
       <li>git (for Windows users, here is <a href="http://git-scm.com/download/win">one option</a>)</li>
     </ol>
-    
+
     <h3 id="osx">OSX</h3>
-    <p>First, install Xcode command line tools.  </p>
+    <p>First, install Xcode command line tools.</p>
     <pre><code>
   $ git clone https://github.com/scottzer0/Augur-UI.git
   $ cd Augur-UI
   $ sudo pip install -r requirements.txt
+  </code></pre>
+      <p>Then you need to install <a href="https://github.com/zack-bitcoin/Truthcoin-POW">Truthcoin-POW</a>, the Augur core software.  The Augur-UI client comes with a script that you can run to install this:</p>
+    <pre><code>
+  $ ./get-core
   $ python app.py
     </code></pre>
 
     <h3 id="nix">Linux</h3>
     <p>First, checkout Augur-UI next to Truthcoin-POW (or change config path in <code>app.py</code>).  Then enter the following commands:</p>
     <pre><code>
+  $ git clone https://github.com/scottzer0/Augur-UI.git
   $ cd Augur-UI
   $ pip install -r requirements.txt
+  </code></pre>
+      <p>Then you need to install <a href="https://github.com/zack-bitcoin/Truthcoin-POW">Truthcoin-POW</a>, the Augur core software.  The Augur-UI client comes with a script that you can run to install this:</p>
+    <pre><code>
+  $ ./get-core
   $ python app.py
-    </code></pre>
-  
+    </pre></code>
+
     <h3 id="windows">Windows</h4>
     <p>Unfortunately, Windows installation requires a few more steps:<br />
     </p>
