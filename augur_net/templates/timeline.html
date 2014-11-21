@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="row">
+<div class="row" id="timeline">
    <div class="col-xs-12">
-    <h2>Project Timeline</h2>
-    <p>Augur team formation: September 1, 2014</p>
-    <p>Augur whitepaper release: November 17, 2014</p>
-    <p>Augur prototype alpha release: November 20, 2014</p>
-    <p>SideCoin release: November 27, 2014</p>
-    <p>Augur crowdsale: May 2015 (approx.)</p>
-    <p>Augur beta test (production version): May 2015 (approx.)</p>
-    <p>Augur launch (production version): November 2015 (approx.)</p>
-    <hr />
-    <h3>We're looking for testers!</h3>
-    <p>If you're interested in participating in our prototype's alpha testing, please <a href="team@augur.net">contact us</a>.
+    <h2>Augur Timeline</h2>
+    <p><a href="/team">Team</a> formation: September 1, 2014</p>
+    <p><a href="{{ STATIC_URL }}augur.pdf">Whitepaper</a> release: November 17, 2014</p>
+    <p>Alpha test (<a href="/prototype">prototype</a>): November 20, 2014</p>
+    <p><a href="https://github.com/tensorjack/sidecoin">SideCoin</a> release: November 27, 2014</p>
+    <p>Crowdsale: May 2015 (approx.)</p>
+    <p>Beta test (production version): May 2015 (approx.)</p>
+    <p>Launch: November 2015 (approx.)</p>
    </div>
 </div>
 {% endblock %}

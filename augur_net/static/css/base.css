@@ -43,6 +43,9 @@ iframe {
 #prototype h2 {
 	margin-bottom: 25px;
 }
+#timeline h2 {
+	margin-bottom: 25px;
+}
 #site-title {
 	font-size: 25px;
 	font-family: Michroma;
@@ -64,7 +67,7 @@ iframe {
 	width: 83px;
 }
 .navbar-nav {
-	font-size: 17px;
+	font-size: 14px;
 	margin-top: 5px;
 }
 .owners {

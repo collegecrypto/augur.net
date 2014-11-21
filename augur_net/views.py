@@ -1,4 +1,3 @@
-import logging, hashlib, random
 import re, sys, os
 import json
 
@@ -30,3 +29,6 @@ def prototype(request):
 
 def code(request):
     return render(request, 'code.html')
+
+def press(request):
+    return render(request, 'press.html')
