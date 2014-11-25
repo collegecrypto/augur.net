@@ -35,17 +35,26 @@
     </code></pre>
 
     <h3 id="nix">Linux</h3>
-    <p>First, checkout Augur-UI next to AugurCore (or change config path in <code>app.py</code>).  Then enter the following commands:</p>
+    <p>Note: so far, this has only been tested in Ubuntu 12.04 and 14.04.  If you've tested this on another Linux distro, let us know!</p>
+
+    <p>First, install the necessary dependencies:</p>
     <pre><code>
   $ apt-get install python-numpy git
   $ apt-get install libpython-dev
   $ pip2 install m3-cdecimal 
   $ pip install six
+  </code></pre>
+
+    <p>Next, checkout the Augur-UI code:</p>
+
+    <pre><code>
   $ git clone https://github.com/AugurProject/Augur-UI.git
   $ cd Augur-UI
   $ pip install -r requirements.txt
   </code></pre>
+
       <p>Then you need to install <a href="https://github.com/AugurProject/AugurCore">AugurCore</a>.  The Augur-UI client comes with a script that you can run to install this:</p>
+      
     <pre><code>
   $ ./get-core
   $ python app.py
