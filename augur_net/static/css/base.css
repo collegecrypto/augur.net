@@ -41,8 +41,10 @@ iframe {
 }
 
 #prototype ol li {
-	font-family: "Lato";
-	font-weight: normal;
+	font-family: Lato;
+	font-weight: 200;
+	font-size: 16px;
+	margin-left: 0px;
 }
 
 #prototype h2 {
