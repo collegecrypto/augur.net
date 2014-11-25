@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
   <meta name="description" content="{% block meta_description %}{% endblock %}">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700|Michroma|Poiret+One">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/google-fonts.css">
   <link rel="stylesheet" href="{{ STATIC_URL }}css/base.css?3">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}css/font-awesome.min.css">
   {% block extra_css %}
   {% endblock %}
 </head>
@@ -43,12 +43,12 @@
   </div>
   <footer>
     <div class="container">
-      <p>&copy; 2014 Augur Project <span style="float:right;"><a href="https://github.com/AugurProject/Augur-UI">Prototype GUI</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="https://github.com/AugurProject/AugurCore">Core</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="mailto:info@augur.net">Contact Us</a></span></p>
+      <p>&copy; 2014 Augur Project <span style="float:right;"><a href="https://github.com/AugurProject/Augur-UI">Augur GUI</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="https://github.com/AugurProject/AugurCore">Augur Core</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="mailto:team@augur.net">Contact Us</a></span></p>
     </div>
   </footer>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.2.1/jquery-migrate.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+<script src="{{ STATIC_URL }}js/jquery-migrate.min.js"></script>
+<script src="{{ STATIC_URL }}js/lodash.min.js"></script>
 {% block bottomscript %}
 {% endblock %}
 </body>
