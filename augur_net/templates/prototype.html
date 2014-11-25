@@ -24,8 +24,10 @@
     </ol>
 
     <h3 id="osx">OSX</h3>
-    <p>First, install Xcode command line tools.</p>
+    <p>First, install <a href="https://developer.apple.com/downloads/">Xcode command line tools</a>.  Then open a terminal and enter the following commands:</p>
     <pre><code>
+  $ sudo pip install numpy
+  $ sudo pip install m3-cdecimal
   $ git clone https://github.com/AugurProject/Augur-UI.git
   $ cd Augur-UI
   $ sudo pip install -r requirements.txt
@@ -39,6 +41,10 @@
     <h3 id="nix">Linux</h3>
     <p>First, checkout Augur-UI next to AugurCore (or change config path in <code>app.py</code>).  Then enter the following commands:</p>
     <pre><code>
+  $ apt-get install python-numpy git
+  $ apt-get install libpython-dev
+  $ pip2 install m3-cdecimal 
+  $ pip install six
   $ git clone https://github.com/AugurProject/Augur-UI.git
   $ cd Augur-UI
   $ pip install -r requirements.txt
