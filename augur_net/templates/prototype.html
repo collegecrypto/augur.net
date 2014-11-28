@@ -5,30 +5,37 @@
 
     <h2>Prototype</h2>
 
-    <p>The Augur prototype is currently in alpha testing.  Our installation procedures (and other documentation) will get better/easier as time goes on and we smooth out the rough edges!  In the meantime, please <a href="mailto:team@augur.net">email</a> us or join us in <a href="irc://irc.freenode.net/augur">#augur</a> on FreeNode IRC if you have trouble installing or running the prototype.</p>
-
-    <p>Caution: the Augur prototype is built for rapid testing.  We can't guarantee its security or scalability!  Use it at your own risk :)</p>
+    <p>We're currently alpha-testing the Augur prototype.  Our installation procedures and other documentation will get better/easier as time goes on and we smooth out the rough edges!  In the meantime, please <a href="mailto:team@augur.net">email</a> us or join us in <a href="irc://irc.freenode.net/augur">#augur</a> on FreeNode IRC if you have trouble installing or running the prototype.</p>
 
     <hr />
 
     <h2 id="installation">Installation</h2>
+
     <p>To install the prototype, you must have the following software installed:</p>
     <ol>
-      <li><a href="https://www.python.org/downloads/">Python 2.7</a></li>
-      <li>pip (for Windows users, <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">Christophe Gohlke's installer</a> is the recommended way to install pip)</li>
-      <li>git (for Windows users, here is <a href="http://git-scm.com/download/win">one option</a>)</li>
+      <li>
+        <a href="https://www.python.org/downloads/">Python 2.7</a>
+      </li>
+      <li>
+        pip (for Windows users, <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">Christophe Gohlke's installer</a> is the recommended way to install pip)
+      </li>
+      <li>
+        git (for Windows users, here is <a href="http://git-scm.com/download/win">one option</a>)
+      </li>
     </ol>
 
     <h3 id="osx">OSX</h3>
+
     <p>First, install <a href="https://developer.apple.com/downloads/">Xcode command line tools</a>.  Then open a terminal and enter the following commands:</p>
     <pre><code>
-  $ git clone https://github.com/AugurProject/Augur-UI.git
-  $ cd Augur-UI
+  $ git clone https://github.com/AugurProject/augur.git
+  $ cd augur
   $ sudo pip install -r requirements.txt
   $ ./augur_ctl start
     </code></pre>
 
-    <h3 id="nix">Linux</h3>
+    <h3 id="linux">Linux (Ubuntu)</h3>
+
     <p>Note: so far, this has only been tested in Ubuntu 12.04 and 14.04.  If you've tested this on another Linux distro, let us know!</p>
 
     <p>First, install the necessary dependencies:</p>
@@ -37,19 +44,20 @@
   $ pip2 install m3-cdecimal 
   </code></pre>
 
-    <p>Next, get the Augur-UI code:</p>
+    <p>Next, download the Augur client:</p>
 
     <pre><code>
-  $ git clone https://github.com/AugurProject/Augur-UI.git
-  $ cd Augur-UI
+  $ git clone https://github.com/AugurProject/augur.git
+  $ cd augur
   $ pip install -r requirements.txt
   $ ./augur_ctl start
     </pre></code>
 
     <h3 id="windows">Windows</h3>
+
     <p>Unfortunately, Windows installation requires a few more steps:<br /></p>
     <ol>
-      <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed. Also, make sure that you have downloaded the <a href="https://github.com/AugurProject/AugurCore">prototype core</a>.  Both programs will need to be extracted to the same directory if you download the zip files.</li>
+      <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed.</li>
 
       <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newest one that matches your python installation's architecture!)</li>
       
@@ -62,19 +70,19 @@
       <li>Finally, go back to the <code>Start Menu</code> type <code>cmd</code> and press <code>Enter</code>, then type <code>pip install flask flask-socketio</code>.</li>
     </ol>
 
-    <p>Now, run the UI by going into the <code>ui</code> directory, then double clicking on <code>app.py</code>.</p>
+    <p>Run the Augur client by going into the <code>ui</code> directory and double-clicking on <code>app.py</code>.</p>
 
     <hr />
 
     <h2 id="usage">Usage</h2>
 
-    <p>Once Augur is installed, navigate to <code>http://localhost:9000</code> in your browser, and you should see the Augur interface:</p>
+    <p>Once Augur is installed, navigate to <code>http://localhost:9000</code> in your browser, and you should see:</p>
 
     <p>
       <img src="{{ STATIC_URL }}images/screenshot_node_stopped.png" style="max-width:100%; border:1px solid #ccc;" />
     </p>
 
-    <p>To fire up your local node, click the red "Node stopped" button, then "Start node".  After your node starts, you will see the main Augur interface:</p>
+    <p>To fire up your node, click the red "Node stopped" button, then "Start node".  After your node starts, you will see the main interface:</p>
 
     <p>
       <img src="{{ STATIC_URL }}images/screenshot_11-17-14_1.png" style="max-width:100%; border:1px solid #ccc; padding: 5px;" />
