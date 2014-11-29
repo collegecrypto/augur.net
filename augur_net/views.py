@@ -18,8 +18,8 @@ def home(request):
 def faq(request):
     return render(request, 'faq.html')
 
-def timeline(request):
-    return render(request, 'timeline.html')
+def progress(request):
+    return render(request, 'progress.html')
 
 def team(request):
     return render(request, 'team.html')
@@ -29,6 +29,3 @@ def prototype(request):
 
 def code(request):
     return render(request, 'code.html')
-
-def press(request):
-    return render(request, 'press.html')
