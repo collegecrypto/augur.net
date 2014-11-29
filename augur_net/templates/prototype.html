@@ -28,17 +28,17 @@
 
     <p>To install the prototype on MacOS X, you must have <a href="https://developer.apple.com/downloads/">Xcode command line tools</a> installed.</p>
 
-    <h4>Automatic Install</h4>
+    <p>Next, download the installation script <a href="{{ STATIC_URL }}install/augur.sh">augur.sh</a>, navigate to your download folder, and double-click on augur.sh.  (You may need to select "open with terminal".)</p>
 
-    <p>Download the installation script <a href="{{ STATIC_URL }}install/augur.sh">augur.sh</a>, navigate to your download folder, and double-click on augur.sh.  (You may need to select "open with terminal".)</p>
-
-    <h4>Manual Install</h4>
-
-    <p>Then open a terminal and enter the following commands:</p>
+    <p>If the install script doesn't work, then you will need to install the prototype manually.  To do this, open a terminal and enter the following commands:</p>
     <pre><code>
   $ git clone https://github.com/AugurProject/augur.git
   $ cd augur
   $ sudo pip install -r requirements.txt
+    </code></pre>
+
+    <p>Then, to run augur, type:</p>
+    <pre><code>
   $ ./augur_ctl start
     </code></pre>
 
@@ -58,8 +58,12 @@
   $ git clone https://github.com/AugurProject/augur.git
   $ cd augur
   $ pip install -r requirements.txt
+    </code></pre>
+
+    <p>Then, to run augur, type:</p>
+    <pre><code>
   $ ./augur_ctl start
-    </pre></code>
+    </code></pre>
 
     <h3 id="windows">Windows</h3>
 
