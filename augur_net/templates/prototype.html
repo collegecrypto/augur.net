@@ -11,82 +11,97 @@
 
     <h2 id="installation">Installation</h2>
 
-    <p>To install the prototype, you must have the following software installed:</p>
-    <ol>
+    <h3 id="windows">Windows</h3>
+
+    <p>Download and run the Windows installer: <a href="{{ STATIC_URL }}install/Augur_0.1.1.exe">Augur_0.1.1.exe</a></p>
+
+    <p>After running the installer, click on your Start Menu, navigate to the Augur application folder, then click on Augur.  Then open your web browser and enter <code>http://localhost:9000</code> in the address bar, and you should be up and running!</p>
+
+    <p>Note: this installer has only been tested on Windows 7 (64-bit).  If the installer doesn't work for you, <a href="#" onclick="$('#windows-manual-install').toggle(); return false;">click here</a> for manual install instructions.</p>
+
+    <div id="windows-manual-install">
+      <hr />
+      <h4>Manual installation</h4>
+      <ol>
+        <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed.</li>
+
+        <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newest one that matches your python installation's architecture!)</li>
+        
+        <li>Once those are installed, you need to download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> (right click on the link and click "Save Target As" and save with the name ez_setup.py.) You should be able to double click this file if you have installed python, and it will run and close on it's own.</li>
+        
+        <li>Now you need to edit the <code>Path</code> environment variable. To do this, go to the <code>Start menu</code>, right click on <code>Computer</code>, click on <code>Advanced System Settings</code> in the upper left, click <code>Environment Variables</code> in the bottom right, then in the System Variables section, scroll down till you see Path. Click on Path, and click Edit.... Press the <code>Home</code> key to get to the start of the line, then add <code>C:\Python27\Scripts;C:\Python27\;</code> to the start of the line and click <code>OK</code>.</li>
+        
+        <li>Now go to <a href="http://aka.ms/vcpython27">http://aka.ms/vcpython27</a> to download and install the Windows C compiler for use with pip.</li>
+        
+        <li>Finally, go back to the Start Menu, type <code>cmd</code> and press enter, then type <code>pip install flask flask-socketio</code>.</li>
+      </ol>
+
+      <p>Run the Augur client by going into the <code>augur</code> directory and double-clicking on <code>augur.py</code>.</p>
+      <hr />
+    </div>
+
+    <h3 id="osx">MacOS X</h3>
+
+    <p>To install the prototype on MacOS X, you must have the following software installed:</p>
+    <ul>
       <li>
         <a href="https://www.python.org/downloads/">Python 2.7</a>
       </li>
       <li>
-        pip (for Windows users, <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/#pip">Christophe Gohlke's installer</a> is the recommended way to install pip)
+        pip - just type <code>sudo easy_install pip</code> in the terminal to install!
       </li>
       <li>
-        git (for Windows users, here is <a href="http://git-scm.com/download/win">one option</a>)
+        <a href="https://code.google.com/p/git-osx-installer/">git</a>
       </li>
-    </ol>
-
-    <h3 id="osx">MacOS X</h3>
-
-    <p>To install the prototype on MacOS X, you must have <a href="https://developer.apple.com/downloads/">Xcode command line tools</a> installed.</p>
+      <li>
+        <a href="https://developer.apple.com/downloads/">Xcode command line tools</a>
+      </li>
+    </ul>
 
     <p>Next, download the installation script <a href="{{ STATIC_URL }}install/augur.sh">augur.sh</a>, navigate to your download folder, and double-click on augur.sh.  (You may need to select "open with terminal".)</p>
 
-    <p>If the install script doesn't work, then you will need to install the prototype manually.  To do this, open a terminal and enter the following commands:</p>
+    <p>To run Augur, navigate to your new <code>augur</code> directory and type:</p>
     <pre><code>
-  $ git clone https://github.com/AugurProject/augur.git
-  $ cd augur
-  $ sudo pip install -r requirements.txt
+  ./augur_ctl start
     </code></pre>
 
-    <p>Then, to run augur, type:</p>
-    <pre><code>
-  $ ./augur_ctl start
-    </code></pre>
+    <p>Install script not working?  <a href="#" onclick="$('#osx-manual-install').toggle(); return false;">Click here</a> for manual install instructions!</p>
 
-    <h3 id="linux">Linux (Ubuntu)</h3>
+    <div id="osx-manual-install">
+      <hr />
+      <h4>Manual installation</h4>
+      <p>Open a terminal and enter the following commands:</p>
+      <pre><code>
+  git clone https://github.com/AugurProject/augur.git
+  cd augur
+  sudo pip install -r requirements.txt
+      </code></pre>
+      <hr />
+    </div>
 
-    <p>Note: so far, this has only been tested in Ubuntu 12.04 and 14.04.  If you've tested this on another Linux distro, let us know!</p>
+    <h3 id="linux">Linux</h3>
+
 
     <p>First, install the necessary dependencies:</p>
     <pre><code>
-  $ apt-get install git python-numpy libpython-dev
-  $ pip2 install m3-cdecimal 
+  apt-get install git python-numpy libpython-dev python-leveldb
+  pip2 install m3-cdecimal 
   </code></pre>
 
     <p>Next, download the Augur client:</p>
 
     <pre><code>
-  $ git clone https://github.com/AugurProject/augur.git
-  $ cd augur
-  $ pip install -r requirements.txt
+  git clone https://github.com/AugurProject/augur.git
+  cd augur
+  pip install -r requirements.txt
     </code></pre>
 
-    <p id="start">Then, to run augur, type:</p>
+    <p>Then, to run augur, type:</p>
     <pre><code>
-  $ ./augur_ctl start
+  ./augur_ctl start
     </code></pre>
 
-    <h3 id="windows">Windows</h3>
-
-    <p>Windows installer: <a href="{{ STATIC_URL }}install/Augur_0.1.1.exe">Augur_0.1.1.exe</a></p>
-
-    <p>After running the installer, click on your Start Menu, navigate to the Augur application folder, then click on Augur.  A command window should appear, containing some debugging information, and saying that Augur is running on <code>http://localhost:9000</code>.  Open your web browser and enter <code>http://localhost:9000</code> in the address bar, and you should be up and running.</p>
-
-    <p>Note: this installer has only been tested so far on Windows 7 (64-bit).  If the installer does not work for you, you can still install Augur on Windows "by hand", but it requires a few extra steps:</p>
-    <ol>
-      <li>First, make sure you have <a href="https://www.python.org/downloads/release/python-278/">Python 2.7</a> installed.</li>
-
-      <li>You need to install a few dependencies, namely numpy, six, cdecimal and pip, which can all be found <a href="http://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a>. I recommend using Ctrl+F to find them (and make sure you get the newest one that matches your python installation's architecture!)</li>
-      
-      <li>Once those are installed, you need to download <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py">ez_setup.py</a> (right click on the link and click "Save Target As" and save with the name ez_setup.py.) You should be able to double click this file if you have installed python, and it will run and close on it's own.</li>
-      
-      <li>Now you need to edit the <code>Path</code> environment variable. To do this, go to the <code>Start menu</code>, right click on <code>Computer</code>, click on <code>Advanced System Settings</code> in the upper left, click <code>Environment Variables</code> in the bottom right, then in the System Variables section, scroll down till you see Path. Click on Path, and click Edit.... Press the <code>Home</code> key to get to the start of the line, then add <code>C:\Python27\Scripts;C:\Python27\;</code> to the start of the line and click <code>OK</code>.</li>
-      
-      <li>Now go to http://aka.ms/vcpython27 to download and install the windows C compiler for use with pip.</li>
-      
-      <li>Finally, go back to the <code>Start Menu</code> type <code>cmd</code> and press <code>Enter</code>, then type <code>pip install flask flask-socketio</code>.</li>
-    </ol>
-
-    <p>Run the Augur client by going into the <code>augur</code> directory and double-clicking on <code>augur.py</code>.</p>
+    <p>Note: Augur has only been tested so far in Ubuntu 12.04 and 14.04.  If you've tested this on another Linux distro, let us know!</p>
 
     <hr />
 
