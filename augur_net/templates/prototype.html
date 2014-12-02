@@ -42,43 +42,42 @@
 
     <h3 id="osx">MacOS X</h3>
 
-    <p>To install the prototype on MacOS X, you must have the following software installed:</p>
-    <ul>
-      <li>
-        <a href="https://www.python.org/downloads/">Python 2.7</a>
-      </li>
-      <li>
-        pip - just type <code>sudo easy_install pip</code> in the terminal to install!
-      </li>
-      <li>
-        <a href="https://code.google.com/p/git-osx-installer/">git</a>
-      </li>
-      <li>
-        <a href="https://developer.apple.com/downloads/">Xcode command line tools</a>
-      </li>
-    </ul>
-
-    <p>Next, download the <a href="{{ STATIC_URL }}install/Augur.command.zip">installer</a>, navigate to your download folder, and double-click on Augur.command.zip.  To run Augur, navigate to your new <code>augur</code> directory and type:</p>
-    <pre><code>
-  ./augur_ctl start
-    </code></pre>
+    <p>Download the <a href="{{ STATIC_URL }}install/Augur.command.zip">installer</a>, navigate to your download folder, and double-click on Augur.command.zip.  Then open your web browser and enter <code>http://localhost:9000</code> in the address bar.</p>
 
     <p>Install script not working?  <a href="#" onclick="$('#osx-manual-install').toggle(); return false;">Click here</a> for manual install instructions!</p>
 
     <div id="osx-manual-install">
       <hr />
       <h4>Manual installation</h4>
+      <p>To install the prototype from source on MacOS X, you must have the following software installed:</p>
+      <ul>
+        <li>
+          <a href="https://www.python.org/downloads/">Python 2.7</a>
+        </li>
+        <li>
+          pip - just type <code>sudo easy_install pip</code> in the terminal to install!
+        </li>
+        <li>
+          <a href="https://code.google.com/p/git-osx-installer/">git</a>
+        </li>
+        <li>
+          <a href="https://developer.apple.com/downloads/">Xcode command line tools</a>
+        </li>
+      </ul>
       <p>Open a terminal and enter the following commands:</p>
       <pre><code>
   git clone https://github.com/AugurProject/augur.git
   cd augur
   sudo pip install -r requirements.txt
       </code></pre>
+      <p>To run Augur, type:</p>
+      <pre><code>
+  ./augur_ctl start
+      </code></pre>
       <hr />
     </div>
 
     <h3 id="linux">Linux</h3>
-
 
     <p>First, install the necessary dependencies:</p>
     <pre><code>
