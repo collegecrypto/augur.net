@@ -9,6 +9,21 @@
     font-size: 10pt;
     font-weight: normal;
 }
+#social-media-buttons {
+    float: left;
+}
+#social-media-buttons ul {
+    list-style-type: none;
+    line-height: 5pt;
+    margin: 0;
+    padding: 0;
+}
+#social-media-buttons ul li {
+    /*display: inline;*/
+    padding: 0;
+    margin: 0;
+    height: 30px;
+}
 </style>
 {% endblock %}
 {% block content %}
@@ -25,6 +40,26 @@
     <p>The potential applications of the Augur project are limitless. The platform has the potential to fundamentally change the ways that individual receive and verify "truth" by providing incentives for honesty in prediction-making.  In practice, the initial  applications of this platform will likely be simple wagers between people interested in common topics -- sports, politics, current events, and so on.  As consumer adoption grows, we expect specialized markets to emerge that will result in an unprecedented availability of previously hidden information.</p>
 
     <h3>Augur: an open-source, decentralized platform for prediction markets.</h3>
+
+    <div id="social-media-buttons">
+      <ul>
+        <li>
+          <iframe
+            src="//platform.twitter.com/widgets/follow_button.html?screen_name=AugurProject"
+            style="width: 300px; height: 20px;"
+            allowtransparency="true"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </li>
+        <li>
+          <iframe src="http://ghbtns.com/github-btn.html?user=AugurProject&repo=augur&type=watch&count=true&size=small"
+        allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+          <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Faugurproject&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21&amp;appId=807459499283753" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+        </li>
+      </ul>
+    </div>
+    <div style="clear:both"></div>
 
     <hr />
 
