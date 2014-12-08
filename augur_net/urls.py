@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^prototype/$', 'augur_net.views.prototype', name='prototype'),
     url(r'^code/$', 'augur_net.views.code', name='code'),
     url(r'^progress/$', 'augur_net.views.progress', name='progress'),
+    url(r'^press/$', 'augur_net.views.press', name='press'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
